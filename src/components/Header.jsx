@@ -4,7 +4,9 @@ import LogoImg from "../img/logo.svg";
 export default function Header() {
   return (
     <Navbar>
-      <Logo src={LogoImg} alt="react-image" />
+      <Link href="#">
+        <Logo src={LogoImg} />
+      </Link>
       <Lista>
         <Item>
           <Link href="#">About</Link>
@@ -24,14 +26,14 @@ export default function Header() {
 }
 
 const Navbar = styled.nav`
-  background-color: red;
+  background-color: #001578;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   min-width: 100%;
 `;
 
 const Logo = styled.img`
-  max-width: 52px;
+  min-width: 52px;
 `;
 
 const Lista = styled.ul`
@@ -41,7 +43,17 @@ const Lista = styled.ul`
 `;
 
 const Item = styled.li`
-list-style-type: none;
+  list-style-type: none;
 `;
 
-const Link = styled.a``;
+const Link = styled.a`
+  margin: auto 0;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.4s ease;
+
+  &:hover {
+    color: #000;
+  }
+`;
